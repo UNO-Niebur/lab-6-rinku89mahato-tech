@@ -2,38 +2,31 @@
 #Name: Rinku Mahato
 #Date:02/28/2026
 #Assignment: Dice roll
+
 import random
 
 def main():
-  #Create an empty list with possible roll values
-  rolls = [0] * 13
-  trials = 10000
-  #Create two dice values ranging from 1 - 6 each
-  for r in range(trials):
-    dice1 = random.randint(1,6)
-    dice2 = random.randint (1,6)
-   #find the sum total of the two dice
-    total = dice1 + dice2
-    rolls [total] += 1
-  #print statictics for dice rolls
-    print("sum\tcount\tpercentage")
-    print("-" * 30)
+    rolls = 10000 
 
-    total_rolls = sum(rolls)
-    total_percentage = 0.0
+    # list for totals 2..12 → 11 slots
+    totals = [0] * 11
 
-    for total in range (2, 13):
-      count = rolls[total]
-      percentage = (count / total_rolls) * 100 
-      total_percentage += percentage
-      print(f"{total}\t{count}\t{percentage:.2f}%")
+    # simulate rolls
+    for r in range(rolls):
+        dice1 = random.randint(1, 6)
+        dice2 = random.randint(1, 6)
+        sum = dice1 + dice2
+        totals[sum - 2] += 1  # index shift: total 2 → index 0
 
-    print("-" * 30)
-    print("total rolls counted:", total_rolls)
-    print(f"sum of percentages: {total_percentage:.2f}% ((should be ~100%)")
+    # print header
+    print(f"Total rolls: {rolls}\n")
+    print("Total : Count : Percent")
 
+    # print statistics for dice rolls
+    for total in range(2, 13):
+        count = totals[total - 2]
+        percent = (count / rolls) * 100
+        print(f"{total:>5} : {count:>5} : {percent:6.2f}%")
 
-  if __name__ == '__main__':
-   main()
-
-  
+if __name__ == "__main__":
+    main()

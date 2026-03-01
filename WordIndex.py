@@ -25,8 +25,9 @@ def main():
      else:
        words[w] = [lineNum]
 
-  for word in words:
-    print(word, words[word])
+  for word in sorted (words):
+    line_list = sorted(set(words[word]))
+    print(f"{word}: {line_list}")
      
   
   #print ("fish" in words) #is a word already in the dictionary?
