@@ -4,7 +4,8 @@
 #Assignment: WordIndex
 
 def main():
-  textFile = open("fish.txt", 'r')
+  file_name = input("Enter file name: ").strip()
+  textFile = open(file_name, 'r')
   
   words = {} #create an empty dictionary
   lineNum = 0
