@@ -6,7 +6,7 @@
 import random
 
 def main():
-    rolls = 7
+    rolls = 10000
 
     # Create an empty list with possible roll values
     totals = [0] * 11
