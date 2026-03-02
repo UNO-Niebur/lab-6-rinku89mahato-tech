@@ -6,19 +6,20 @@
 import random
 
 def main():
-    rolls = 10000 
+    rolls = 7
 
-    # list for totals 2..12 → 11 slots
+    # Create an empty list with possible roll values
     totals = [0] * 11
 
-    # simulate rolls
+    # Create two dice values ranging from 1 - 6 each
+    # find the sum total of the two dice
     for r in range(rolls):
         dice1 = random.randint(1, 6)
         dice2 = random.randint(1, 6)
         sum = dice1 + dice2
         totals[sum - 2] += 1  # index shift: total 2 → index 0
 
-    # print header
+    
     print(f"Total rolls: {rolls}\n")
     print("Total : Count : Percent")
 
