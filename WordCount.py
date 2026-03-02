@@ -1,7 +1,7 @@
 #WordCount.py
 #Name: Rinku Mahato
 #Date: 02/28/2026
-#Assignment: Word Count
+#Assignment: Word Count,line count,char count
 
 def main():
     filename = input("Enter file name: ").strip()
