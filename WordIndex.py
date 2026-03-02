@@ -1,7 +1,7 @@
 #WordIndex.py
-#Name:
-#Date:
-#Assignment:
+#Name: Rinku Mahato
+#Date: 03/01/2026
+#Assignment: WordIndex
 
 def main():
   textFile = open("fish.txt", 'r')
@@ -17,6 +17,7 @@ def main():
      w =w.lower()
      w = w.replace(",", "")
      w = w.replace(".", "")
+     w = w.replace("!", "")
      print(w)
 
      if w in words:
